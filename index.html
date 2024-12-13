@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princesinhas do Funk</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="barbie-logo.png" alt="Logo Barbie" class="barbie-logo">
+                <h1>Princesinhas do Funk</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active" onclick="showSection('musicas')">
+                    <i class="fas fa-crown"></i> Músicas
+                </a>
+                <a href="#" onclick="showSection('artistas')">
+                    <i class="fas fa-star"></i> Artistas
+                </a>
+                <a href="#" onclick="showSection('albuns')">
+                    <i class="fas fa-compact-disc"></i> Álbuns
+                </a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <!-- Seção de Músicas -->
+            <section id="musicas-section" class="content-section">
+                <header>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="busca-musica" placeholder="Buscar música...">
+                    </div>
+                </header>
+
+                <div class="content-area">
+                    <div class="form-section">
+                        <h2><i class="fas fa-plus-circle"></i> Nova Música</h2>
+                        <form id="musicaForm">
+                            <div class="input-group">
+                                <i class="fas fa-music"></i>
+                                <input type="text" id="titulo" placeholder="Nome da música" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-microphone"></i>
+                                <select id="artista" required>
+                                    <option value="">Selecione o artista</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-compact-disc"></i>
+                                <select id="album" required>
+                                    <option value="">Selecione o álbum</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-calendar"></i>
+                                <input type="date" id="data_lancamento" required>
+                            </div>
+                            <div class="file-upload">
+                                <input type="file" id="arquivo" accept="audio/*" required>
+                                <label for="arquivo">
+                                    <i class="fas fa-upload"></i> Escolher arquivo
+                                </label>
+                            </div>
+                            <div class="audio-preview" style="display: none;">
+                                <audio id="preview" controls></audio>
+                            </div>
+                            <button type="submit">
+                                <i class="fas fa-plus"></i> Adicionar Música
+                            </button>
+                        </form>
+                    </div>
+
+                    <div id="resultados-musicas" class="results-grid"></div>
+                </div>
+            </section>
+
+            <!-- Seção de Artistas -->
+            <section id="artistas-section" class="content-section" style="display: none;">
+                <header>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="busca-artista" placeholder="Buscar artista...">
+                    </div>
+                </header>
+
+                <div class="content-area">
+                    <div class="form-section">
+                        <h2><i class="fas fa-plus-circle"></i> Novo Artista</h2>
+                        <form id="artistaForm">
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="nome-artista" placeholder="Nome do artista" required>
+                            </div>
+                            <button type="submit">
+                                <i class="fas fa-plus"></i> Adicionar Artista
+                            </button>
+                        </form>
+                    </div>
+
+                    <div id="resultados-artistas" class="results-grid"></div>
+                </div>
+            </section>
+
+            <!-- Seção de Álbuns -->
+            <section id="albuns-section" class="content-section" style="display: none;">
+                <header>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="busca-album" placeholder="Buscar álbum...">
+                    </div>
+                </header>
+
+                <div class="content-area">
+                    <div class="form-section">
+                        <h2><i class="fas fa-plus-circle"></i> Novo Álbum</h2>
+                        <form id="albumForm">
+                            <div class="input-group">
+                                <i class="fas fa-compact-disc"></i>
+                                <input type="text" id="nome-album" placeholder="Nome do álbum" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-microphone"></i>
+                                <select id="artista-album" required>
+                                    <option value="">Selecione o artista</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-calendar"></i>
+                                <input type="date" id="data-lancamento-album" required>
+                            </div>
+                            <button type="submit">
+                                <i class="fas fa-plus"></i> Adicionar Álbum
+                            </button>
+                        </form>
+                    </div>
+
+                    <div id="resultados-albuns" class="results-grid"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="player-bar">
+            <audio id="audioPlayer" controls></audio>
+            <div class="player-info">
+                <span class="now-playing">Selecione uma música para tocar ✨</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

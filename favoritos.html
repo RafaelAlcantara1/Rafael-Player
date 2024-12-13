@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princesinhas do Funk - Favoritas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="barbie-logo.png" alt="Logo Barbie" class="barbie-logo">
+                <span>Princesinhas do Funk</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html">
+                    <i class="fas fa-crown"></i> Todas as Músicas
+                </a>
+                <a href="favoritos.html" class="active">
+                    <i class="fas fa-heart"></i> Minhas Princesinhas
+                </a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header>
+                <div class="search-bar">
+                    <i class="fas fa-magic"></i>
+                    <input type="text" id="buscaFavoritos" placeholder="Encontre sua princesinha favorita...">
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="favorites-header">
+                    <h2><i class="fas fa-heart"></i> Minhas Músicas Favoritas</h2>
+                    <div class="sparkles">
+                        <i class="fas fa-sparkles"></i>
+                        <i class="fas fa-crown"></i>
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                </div>
+
+                <div class="music-grid" id="resultadosFavoritos"></div>
+            </div>
+
+            <footer class="player-bar">
+                <audio id="audioPlayer" controls></audio>
+                <div class="player-info">
+                    <span class="now-playing">Escolha uma música para começar ✨</span>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="favoritos.js"></script>
+</body>
+</html> 
